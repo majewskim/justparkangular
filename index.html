@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body ng-app="justpark" ng-controller="calculonCtrl as calc">
+	<div class="container">
+		<h2 class="text-center">Hello, I'm zee calculator!</h2>
+		<div class="well">
+			<p>This is an AngularJS version of JustPark test from github.</p>
+			<p>I've decided to do it in AngularJS, because it frees the server from additional calls
+				therefore it performs much much faster</p>
+			</div>
+			<input type="text" ng-model="calc.from" ng-keyup="calc.calculate()" ng-init="calc.from='2014-08-04T11:00:00'">
+			<input type="text" ng-model="calc.to" ng-keyup="calc.calculate()" ng-init="calc.to='2014-08-04T12:00:00'">
+
+			<h2>{{calc.finalPrice}}</h2>
+		</div>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>		
+		<script src="app.js"></script>
+	</body>
+	</html>
