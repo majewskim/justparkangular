@@ -26,7 +26,14 @@
 
             //if that price is bigger then a daily rate, use daily rate
             if (finalPrice > rates.rateDaily) {
-                finalPrice = rates.rateDaily * Math.ceil(convertedValues.resultDays);
+                var days = Math.ceil(convertedValues.resultDays);
+
+                //check if it the return is before 5am, if yes, don't count the last day
+                if (days > 1 && toDate.getUTCHours() < 5) {
+                    finalPrice = rates.rateDaily * (days - 1);
+                } else {
+                    finalPrice = rates.rateDaily * days;
+                }
             }
             //if price is bigger then a weekly rate, use weekly rate
             if (finalPrice > rates.rateWeekly) {
