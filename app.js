@@ -31,6 +31,8 @@
                 //check if it the return is before 5am, if yes, don't count the last day
                 if (days > 1 && toDate.getUTCHours() < 5) {
                     finalPrice = rates.rateDaily * (days - 1);
+                } else if (days == 1 && toDate.getUTCHours() >=5) {
+                    finalPrice = rates.rateDaily * (days + 1);
                 } else {
                     finalPrice = rates.rateDaily * days;
                 }
